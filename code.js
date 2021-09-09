@@ -11,11 +11,41 @@
         "eat" becomes "eat-yay"
         "omelet" becomes "omelet-yay" 
 */
-function encodeVowelWord(word) {
-  return ""; // replace this!
+const words = [
+  "eat",
+  "omelet",
+  "are",
+  "egg",
+  "explain",
+  "always",
+  "ends",
+  "every",
+  "another",
+  "under",
+  "island",
+  "elegant",
+];
+  // if it starts with a vowel, add yay at the end. //
+function translatePigLatin(str) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'],
+      result = str.split('');
+
+  if (vowels.includes(str.charAt(0))) {
+    return str += 'yay';
+  } else {
+    for (var i = 0; i < str.length; i++) {
+      if (!vowels.includes(str[i])) {
+        result.push(result.shift());
+      } else {
+        result.push('ay');
+      }
+    }
+  }
+  console.log();
 }
 
-// Write your unit tests here
+
+
 
 /*  --------------------------------------------------------
     encodeConsonantWord()
@@ -28,11 +58,29 @@ function encodeVowelWord(word) {
         "latin" becomes "atin-lay"
         "cheers" becomes "eers-chay"
 */
+const testSimpleConsonantWords = {
+  latin: "atin-lay",
+  banana: "anana-bay",
+  happy: "appy-hay",
+  duck: "uck-day",
+  dopest: "opest-day",
+  me: "e-may",
+  too: "oo-tay",
+  will: "ill-way",
+  moist: "oist-may",
+  wet: "et-way",
+  real: "eal-ray",
+  simple: "imple-say",
+  say: "ay-say",
+  bagel: "agel-bay",
+  you: "ou-yay",
+};
+
 function encodeConsonantWord(word) {
   return ""; // replace this!
+
 }
 
-// Write your unit tests here
 
 /*  --------------------------------------------------------
     encodeWord()
@@ -47,6 +95,17 @@ function encodeConsonantWord(word) {
         "cheers" becomes "eers-chay" because it starts with a consonant cluster "ch"
         "you" becomes "ou-yay" because it starts with a consonant "y"
 */
+const testClusteredConsonantWords = {
+  cheers: "eers-chay",
+  shesh: "esh-shay",
+  smile: "ile-smay",
+  string: "ing-stray",
+  thanks: "anks-thay",
+  trash: "ash-tray",
+  stupid: "upid-stay",
+  glove: "ove-glay",
+};
+
 function encodeWord(word) {
   return ""; // replace this!
 }
